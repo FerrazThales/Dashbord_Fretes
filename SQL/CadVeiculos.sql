@@ -5,6 +5,6 @@ CREATE TABLE CadVeiculos
 	Placa VARCHAR(10),
     Marca VARCHAR(4),
     Tipo_Veiculo VARCHAR(10) NOT NULL,
-    Bau VARCHAR(10),
+    Bau VARCHAR(20),
     Ano INT
 )
