@@ -12,7 +12,7 @@ conexao  = pyodbc.connect(dados_conexao)
 cursor = conexao.cursor()
 
 # importando as planilhas
-df = pd.read_excel('Excel/Cadastros.xlsx',sheet_name='Clientes')
+df = pd.read_excel('Base_de_Dados/Cadastros.xlsx',sheet_name='Clientes')
 n = df.shape[0]
 
 # percorrendo  a tabela
