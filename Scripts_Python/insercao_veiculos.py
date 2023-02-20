@@ -24,12 +24,11 @@ for i in range(n):
     bau = df['Baú'][i]
     Ano = df['Ano'][i]
     
-    script = f''' INSERT INTO CadVeiculos (SK_VEICULO,Placa,Marca,Tipo_Veiculo,Bau,Ano) 
-    VALUES    ('{SK_VEICULO}', 
-               '{Placa}',
-               '{Marca}',
-               '{tipo_veiculo}',
-               '{bau}',
-               {Ano})'''
+    script = f''' 
+    INSERT INTO CadVeiculos 
+        (SK_VEICULO,Placa,Marca,Tipo_Veiculo,Bau,Ano) 
+    VALUES
+    ('{SK_VEICULO}','{Placa}','{Marca}','{tipo_veiculo}','{bau}',{Ano})
+               '''
     cursor.execute(script)
     cursor.commit()

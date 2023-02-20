@@ -19,6 +19,11 @@ n = df.shape[0]
 for i in range(n):
     SK_Motorista = df['SK_Motorista'][i]
     Motorista = df['Motorista'][i]
-    script = f''' INSERT INTO CadMotoristas (SK_MOTORISTA,MOTORISTA) VALUES ('{SK_Motorista}', '{Motorista}')'''
+    script = f''' 
+    INSERT INTO CadMotoristas 
+        (SK_MOTORISTA,MOTORISTA) 
+    VALUES 
+        ('{SK_Motorista}', '{Motorista}')
+        '''
     cursor.execute(script)
     cursor.commit()
