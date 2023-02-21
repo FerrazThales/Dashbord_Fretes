@@ -12,8 +12,10 @@ conexao  = pyodbc.connect(dados_conexao)
 cursor = conexao.cursor()
 
 # importando as planilhas
-df = pd.read_csv('Base_de_Dados/fFrete.csv',encoding='UTF-16',sep='\t',parse_dates=['Data'],
-                 decimal=',' , date_parser=lambda x: pd.to_datetime(x, format='%d/%m/%Y'))
+cabecalho = ['Mês','SK_Veiculo','SK_Motorista','Km Percorrido','Litros','Combustível','Manutenção','Custo Fixo']
+df = pd.read_excel('fKMRodado.xlsx',names = cabecalho)
+df.dropna(subset=cabecalho[1:8], inplace=True)
+df = df[~df.isin(cabecalho).any(axis=1)]
 n = df.shape[0]
 
 # percorrendo  a tabela
