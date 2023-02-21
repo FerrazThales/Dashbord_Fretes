@@ -33,8 +33,7 @@ for i in range(n):
     valor_mercadoria  = df['Valor da Mercadoria'][i]
     script = f''' 
         INSERT INTO Fretes 
-        (DATA_FISCAL,SK_CLIENTE,SK_VEICULO,DOC_FISCAL,COD_VIAGEM,Cod_IBGE,VALOR_FRETE,
-        PESO_KG,PESO_CUBADO,VALOR_MERCADORIA)
+        (DATA_KM,SK_VEICULO,SK_Motorista,KM_PERCORRIDO,LITROS,COMBUSTIVEL,MANUTENCAO,CUSTO_FIXO)
         VALUES 
         ('{data}','{SK_Cliente}','{SK_Veiculo}','{doc_fiscal}','{cod_viagem}','{cod_IBGE}',
         {valor_frete},{peso_kg},{peso_cubo},{valor_mercadoria})'''
