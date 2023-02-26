@@ -1,4 +1,3 @@
 O que devo fazer:
--  arrumar o outro excel
-- colocar tudo como está no BI atual para ver o que dá para fazer
-- comentar todos os códigos
+
+- estudar melhor a base de dados
