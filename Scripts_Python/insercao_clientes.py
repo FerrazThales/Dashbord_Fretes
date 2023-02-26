@@ -23,11 +23,9 @@ for i in range(n):
     cod_regiao = df['Cod Região'][i]
     cod_ibge =df['Cod IBGE'][i]
     
-    script = f''' INSERT INTO CadClientes (SK_CLIENTE,Cidade,UF,Cod_Regiao,Cod_IBGE) VALUES 
-                                                                            ('{SK_Cliente}', 
-                                                                             '{Cidade}',
-                                                                             '{UF}',
-                                                                             '{cod_regiao}',
-                                                                             '{cod_ibge}')'''
+    script = f'''
+    INSERT INTO CadClientes (SK_CLIENTE,Cidade,UF,Cod_Regiao,Cod_IBGE) 
+    VALUES ('{SK_Cliente}','{Cidade}','{UF}','{cod_regiao}','{cod_ibge}')
+    '''
     cursor.execute(script)
     cursor.commit()
