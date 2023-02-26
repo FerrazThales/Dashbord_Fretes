@@ -1,3 +1,5 @@
 O que devo fazer:
 
 - estudar melhor a base de dados
+- lembrar de deixar um espaço para previsão do tempo
+- lembrar de deixar um espaço para últimas notícias sobre o trânsito
