@@ -1,5 +1,4 @@
 O que devo fazer:
 
 - colocar apenas 04 dias de previsão de tempo
-- arrumar o código para usar o import query
-- criar as views no DB
+- criar um dax para pegar os atualizados na últimas meia hora.

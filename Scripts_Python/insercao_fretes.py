@@ -1,5 +1,6 @@
 import pandas as pd
 import pyodbc
+from datetime import datetime
 import time
 
 #  conexão com o banco de dados
@@ -30,12 +31,14 @@ for i in range(n):
     peso_kg  = df['Peso (KG)'][i]
     peso_cubo  = df['Peso (Cubado)'][i]
     valor_mercadoria  = df['Valor da Mercadoria'][i]
+    Tempo_de_insercao = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    
     script = f''' 
         INSERT INTO Fretes 
-        (DATA_FISCAL,SK_CLIENTE,SK_VEICULO,DOC_FISCAL,COD_VIAGEM,Cod_IBGE,VALOR_FRETE,PESO_KG,PESO_CUBADO,VALOR_MERCADORIA)
-        VALUES ('{data}','{SK_Cliente}','{SK_Veiculo}','{doc_fiscal}','{cod_viagem}','{cod_IBGE}',{valor_frete},{peso_kg},{peso_cubo},{valor_mercadoria})
+        (DATA_FISCAL,SK_CLIENTE,SK_VEICULO,DOC_FISCAL,COD_VIAGEM,Cod_IBGE,VALOR_FRETE,PESO_KG,PESO_CUBADO,VALOR_MERCADORIA,TEMPO_DE_INSERCAO)
+        VALUES ('{data}','{SK_Cliente}','{SK_Veiculo}','{doc_fiscal}','{cod_viagem}','{cod_IBGE}',{valor_frete},{peso_kg},{peso_cubo},{valor_mercadoria},'{Tempo_de_insercao}')
         '''
-    time.sleep(5)
+    time.sleep(2)
     
     cursor.execute(script)
     cursor.commit()
