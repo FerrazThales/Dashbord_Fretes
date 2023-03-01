@@ -1,5 +1,6 @@
 import pandas as pd
 import pyodbc
+import time
 
 #  conexão com o banco de dados
 dados_conexao = (
@@ -34,7 +35,7 @@ for i in range(n):
         (DATA_FISCAL,SK_CLIENTE,SK_VEICULO,DOC_FISCAL,COD_VIAGEM,Cod_IBGE,VALOR_FRETE,PESO_KG,PESO_CUBADO,VALOR_MERCADORIA)
         VALUES ('{data}','{SK_Cliente}','{SK_Veiculo}','{doc_fiscal}','{cod_viagem}','{cod_IBGE}',{valor_frete},{peso_kg},{peso_cubo},{valor_mercadoria})
         '''
-
+    time.sleep(5)
     
     cursor.execute(script)
     cursor.commit()
