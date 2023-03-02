@@ -1,4 +1,5 @@
 O que devo fazer:
 
 - colocar apenas 04 dias de previsão de tempo
-- criar um dax para pegar os atualizados na últimas meia hora.
+- melhorar design
+- arrumar as notícias para que pegue notícias de trânsito de todo o país
