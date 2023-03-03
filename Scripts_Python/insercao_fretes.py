@@ -35,12 +35,12 @@ for i in range(n):
     peso_cubo  = df['Peso (Cubado)'][i]
     valor_mercadoria  = df['Valor da Mercadoria'][i]
     Tempo_de_insercao = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    sit = np.random.choice(doc,p=[0.7,0.2,0.1])
+    sit = np.random.choice(doc,p=[0.8,0.15,0.05])
     
     script = f''' 
         INSERT INTO Fretes 
         (DATA_FISCAL,SK_CLIENTE,SK_VEICULO,DOC_FISCAL,COD_VIAGEM,Cod_IBGE,VALOR_FRETE,PESO_KG,PESO_CUBADO,VALOR_MERCADORIA,TEMPO_DE_INSERCAO,SITUACAO)
-        VALUES ('{data}','{SK_Cliente}','{SK_Veiculo}','{doc_fiscal}','{cod_viagem}','{cod_IBGE}',{valor_frete},{peso_kg},{peso_cubo},{valor_mercadoria},'{Tempo_de_insercao}',{sit})
+        VALUES ('{data}','{SK_Cliente}','{SK_Veiculo}','{doc_fiscal}','{cod_viagem}','{cod_IBGE}',{valor_frete},{peso_kg},{peso_cubo},{valor_mercadoria},'{Tempo_de_insercao}','{sit}')
         '''
     time.sleep(np.random.randint(2, 60))
     
