@@ -7,3 +7,4 @@ O que devo fazer:
 - colocar mapa
 - criar métricas do kpi
 - testar o km rodado com o skiprows
+- fazer documentação
