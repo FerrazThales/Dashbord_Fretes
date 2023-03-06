@@ -1,5 +1,7 @@
 import pandas as pd
 import pyodbc
+import time
+import numpy as np
 
 #  conexão com o banco de dados
 dados_conexao = (
@@ -21,24 +23,23 @@ n = df.shape[0]
 
 # percorrendo  a tabela
 for i in range(n):
-    # ajustando as datas para 2021 e 2022
-    data = (df['Mês'][i]).strftime('%Y-%m-%d')
-    SK_Veiculo = df['SK_Veiculo'][i]
-    SK_Motorista = df['SK_Motorista'][i]
-    km_percorrido  = float(df['Km Percorrido'][i])
-    Litros  = float(df['Litros'][i])
-    comb  = float(df['Combustível'][i])
-    manut  = float(df['Manutenção'][i])
-    custo_fixo  = float(df['Custo Fixo'][i])
+    data = (df['Mês'].iloc[i]).strftime('%Y-%m-%d')
+    SK_Veiculo = df['SK_Veiculo'].iloc[i]
+    SK_Motorista = df['SK_Motorista'].iloc[i]
+    km_percorrido  = float(df['Km Percorrido'].iloc[i])
+    Litros  = float(df['Litros'].iloc[i])
+    comb  = float(df['Combustível'].iloc[i])
+    manut  = float(df['Manutenção'].iloc[i])
+    custo_fixo  = float(df['Custo Fixo'].iloc[i])
     
     script = f''' 
-        INSERT INTO Fretes 
+        INSERT INTO KMRodado 
         (DATA_KM,SK_VEICULO,SK_Motorista,KM_PERCORRIDO,LITROS,COMBUSTIVEL,MANUTENCAO,CUSTO_FIXO)
         VALUES 
         ('{data}','{SK_Veiculo}','{SK_Motorista}',{km_percorrido},{Litros},{comb},{manut},{custo_fixo})
         
         '''
-
     
+    time.sleep(np.random.randint(2, 60))
     cursor.execute(script)
     cursor.commit()

@@ -1,10 +1,11 @@
 O que devo fazer:
 
-- melhorar design
+- criar métricas do kpi
+- melhorar o design dos Kpis
 - arrumar as notícias para que pegue notícias de trânsito de todo o país
 - arrumar cores dos documentos emitidos de acordo com a condição
 - fazer a view do mapa
 - colocar mapa
-- criar métricas do kpi
 - testar o km rodado com o skiprows
+- arrumar o design
 - fazer documentação
